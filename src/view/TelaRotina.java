@@ -28,7 +28,7 @@ public class TelaRotina implements ActionListener, ItemListener, ListSelectionLi
 	private ButtonGroup radioGroup, grupoFiltro;
 	private String tipo, aux, aux2, aux3;
 	private int check = 0, index;
-	private String filtro;
+	private String filtro = "Todos";
 	 // exclusao e edicao sao variaveis do tipo boolean. Sao responsaveis para diferenciar a intencao do usuario ao interagir com a lista.
 	private boolean exclusao = false, edicao = false;
 	/**
@@ -368,11 +368,11 @@ public class TelaRotina implements ActionListener, ItemListener, ListSelectionLi
 	@Override //acoes da lista
 	public void valueChanged(ListSelectionEvent event) {
 		int idx = listaExercicio.getSelectedIndex(); 
-		this.index = idx;
 		if(idx != -1) {
+			this.index = idx;
 			if(exclusao == true) { //Caso o usuario interaja com a lista na intencao de excluir um item
-				listModel.removeElementAt(idx);
-				rotina.removeExercicio(idx);
+				listModel.removeElementAt(index);
+				rotina.removeExercicio(index);
 				exclusao = false;
 				frameExclui.dispose();
 				scroll.setBounds(190, 60, 200, 200);
