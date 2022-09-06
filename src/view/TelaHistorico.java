@@ -1,3 +1,7 @@
+/**
+ * Pacote da interface grafica
+ * @author Lucas Soares Rodrigues
+ */
 package view;
 
 import javax . swing .*;
@@ -7,37 +11,30 @@ import java.awt.event.*;
  * @author Lucas Soares Rodigues 
  */
 public class TelaHistorico implements ActionListener{
-	JFrame frameHist, frameRetorno;
-	JButton bVolta;
-	JList<String> listaHist;
-	DefaultListModel<String> listModel;
-	JScrollPane scroll;
-	JLabel texto[] = new JLabel[20];
-	int numHist = 0;
-	int posY = 10;
+	private JFrame frameHist, frameRetorno;
+	private JButton bVolta;
+	private JLabel textoNome, textoNum; //Titulo de cada coluna do historico
+	private JLabel texto[] = new JLabel[30]; //Vetor responsavel por exibir rotinas registradas no historico
+	private int numHist = 0; //Numero de Rotinas registradas
+	private int posY = 40; //Posicao no eixo Y do JLabel
 	/**
-	 * Metodo construtor da Classe TelaHistorico. Cria todos os elementos vizuais da Classe.
+	 * Metodo construtor da Classe TelaHistorico. Cria todos os elementos visuais da Classe.
 	 * @param framePrincipal JFrame da TelaPrincipal.
 	 */
 	public TelaHistorico(JFrame framePrincipal) {
 		frameHist = new JFrame("Historico");
 		frameRetorno = framePrincipal;
 		bVolta = new JButton("Voltar");
-		listModel = new DefaultListModel<String>();
-		listaHist = new JList<String>(listModel);
-		scroll = new JScrollPane(listaHist);
-		
-		DefaultListCellRenderer renderer = (DefaultListCellRenderer) listaHist.getCellRenderer();
-		renderer.setHorizontalAlignment(SwingConstants.CENTER);
-		scroll.setBounds(190, 60, 200, 200);
+		textoNome = new JLabel("Rotina");
+		textoNum = new JLabel("Numero de exercicios");
 		
 		bVolta.addActionListener(this);
 		bVolta.setBounds(10, 235, 170, 25);
-		
-		
-		//frameHist.add(scroll);
+		textoNome.setBounds(190, 10, 200, 20);
+		textoNum.setBounds(350, 10, 200, 20);
+		frameHist.add(textoNome);
+		frameHist.add(textoNum);
 		frameHist.add(bVolta);
-		
 		frameHist.setLayout(null);
 		frameHist.setSize(700, 350);
 		frameHist.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,9 +63,9 @@ public class TelaHistorico implements ActionListener{
 	 * @param numeroExercicio Quantidade de exercicios que foram executados.
 	 */
 	public void adicionaHist(String nome, int numeroExercicio) {
-		texto[numHist] = new JLabel("Rotina: " + nome);
+		texto[numHist] = new JLabel("" + nome);
 		texto[numHist].setBounds(190, posY, 200, 20);
-		texto[numHist + 1] = new JLabel("Numero de exercicios: " + numeroExercicio);
+		texto[numHist + 1] = new JLabel("" + numeroExercicio);
 		texto[numHist + 1].setBounds(350, posY, 200, 20);
 		frameHist.add(texto[numHist]);
 		frameHist.add(texto[numHist + 1]);

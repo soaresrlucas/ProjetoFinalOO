@@ -1,4 +1,7 @@
-
+/**
+ * Pacote de negocio
+ * @author Lucas Soares Rodrigues
+ */
 package modelo;
 /**
  * Classe abstrata Exercicio e a forma primaria de todos os exercicios, sendo Classe pai de Cardio e Maquina.

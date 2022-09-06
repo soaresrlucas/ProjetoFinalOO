@@ -1,4 +1,7 @@
-
+/**
+ * Pacote de negocio
+ * @author Lucas Soares Rodrigues
+ */
 package modelo;
 /**
  * Classe Maquina e responsavel pelos Exercicios do tipo Maquina e herda da Classe Exercicio.

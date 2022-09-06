@@ -1,4 +1,7 @@
-
+/**
+ * Pacote de negocio
+ * @author Lucas Soares Rodrigues
+ */
 package modelo;
 /**
  * Classe Rotina armazena uma lista de exercicios.
@@ -15,10 +18,10 @@ public class Rotina {
 	 * @param tipo Tipo do Exercicio. Cardio ou Maquina.
 	 */
 	public void adicionaExercicio(String nome, String tipo) {
-		if("cardio" == tipo.intern()) {
-			exercicios[qtdExercicio] = new Cardio(nome);
-		}else if("maquina" == tipo.intern()) {
-			exercicios[qtdExercicio] = new Maquina(nome);
+		if("cardio" == tipo.intern()) { //Caso o Exercicio que esta sendo adicionado seja do tipo Cardio
+			exercicios[qtdExercicio] = new Cardio(nome); //Uso de Polimorfismo
+		}else if("maquina" == tipo.intern()) { //Caso o Exercicio que esta sendo adicionado seja do tipo Maquina
+			exercicios[qtdExercicio] = new Maquina(nome); //Uso de Polimorfismo
 		}
 		qtdExercicio ++;
 	}
@@ -31,17 +34,16 @@ public class Rotina {
 	public void editaExercicio(int index, String nome, String tipo) {
 		int temp;
 		temp = qtdExercicio;
-		exercicios[index] = null;
+		exercicios[index] = null; //Anula o exercicio que esta sendo editado
 		qtdExercicio = index;
-		this.adicionaExercicio(nome, tipo);
-		qtdExercicio = temp;
+		this.adicionaExercicio(nome, tipo); //Adiciona um novo exercicio no lugar do que foi anulado
+		qtdExercicio = temp; //Contador volta ao seu valor anterior
 	}
-	
 	/**
 	 * Remove um exercicios de uma posicao especifica da lista.
 	 * @param index Posicao do exercicio a ser removido.
 	 */
-	public void removeExercicio(int index) { //Apagar exercicios especifico 
+	public void removeExercicio(int index) {
 		for(int i = index; i < qtdExercicio; i++) {
 			exercicios[i] = exercicios[i + 1];
 		}
@@ -62,9 +64,5 @@ public class Rotina {
 
 	public int getQtdExercicio() {
 		return qtdExercicio;
-	}
-
-	public void setQtdExercicio(int qtdExercicio) {
-		this.qtdExercicio = qtdExercicio;
 	}
 }
