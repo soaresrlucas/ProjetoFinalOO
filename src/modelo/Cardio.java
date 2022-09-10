@@ -4,7 +4,7 @@
  */
 package modelo;
 /**
- * Classe Cardio e responsavel pelos Exercicios do tipo cardio e herda da Classe Exercicio.
+ * Classe Cardio e responsavel pelos Exercicios do tipo cardio e herda da Classe Exercicio. Resposavel por setar os valores do exercicio.
  * @author Lucas Soares Rodigues 
  */
 public class Cardio extends Exercicio {
@@ -15,11 +15,11 @@ public class Cardio extends Exercicio {
 	 */
 	public Cardio(String nome) {
 		super.setNome(nome);
-		super.setTipo("Cardio");
+		super.setTipo("cardio");
 	}
 	/**
 	 * Sobrescrita do metodo abstrato da Classe Pai Exercicio. Responsavel por setar a distancia a ser percorrida no exercicio de Cardio.
-	 * @param distancia
+	 * @param distancia Distancia a ser percorrida no exercicio.
 	 * @param num2 Parametro nao utilizado.
 	 * @param num3 Parametro nao utilizado.
 	 */

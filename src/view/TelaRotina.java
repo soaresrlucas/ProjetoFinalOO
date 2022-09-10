@@ -339,20 +339,20 @@ public class TelaRotina implements ActionListener, ItemListener, ListSelectionLi
 		   if(filtroCardio.isSelected()) {
 			   listModel.removeAllElements();
 			   for(int i = 0; i < rotina.getQtdExercicio(); i++) {
-				   if(rotina.getExercicio(i).getTipo() == "Cardio") {
+				   if(rotina.getExercicio(i).getTipo() == "cardio") {
 					   listModel.addElement(rotina.getExercicio(i).getNome());
 				   }
 			   }
-			   filtro = "Cardio";
+			   filtro = "cardio";
 		   }
 		   if(filtroMaquina.isSelected()){
 			   listModel.removeAllElements();
 			   for(int i = 0; i < rotina.getQtdExercicio(); i++) {
-				   if(rotina.getExercicio(i).getTipo() == "Maquina") {
+				   if(rotina.getExercicio(i).getTipo() == "maquina") {
 					   listModel.addElement(rotina.getExercicio(i).getNome());
 				   }
 			   }
-			   filtro = "Maquina";
+			   filtro = "maquina";
 		   }
 	}
 	/**

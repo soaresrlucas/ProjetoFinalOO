@@ -25,6 +25,7 @@ public class TelaInicia implements ActionListener{
 	 * Metodo construtor da Classe TelaInicia. Cria todos os elementos vizuais da Classe.
 	 * @param rotina Instancia de Rotina referente a essa tela.
 	 * @param telaHist Instancia de TelaHistorico.
+	 * @param filtro Filtro do tipo de exercicio aplicado pelo usuario.
 	 */
 	public TelaInicia(Rotina rotina, TelaHistorico telaHist, String filtro) {
 		frameCardio = new JFrame();
@@ -73,7 +74,7 @@ public class TelaInicia implements ActionListener{
 		int cont;
 		cont = contaExercicios();
 		if(exercicioAtual < cont) { //Caso ainda tenha algum Exercicio a ser executado
-			if(exercicios[exercicioAtual].getTipo() == "Cardio") { //Caso o Exercicio a ser executado seja do tipo Cardio
+			if(exercicios[exercicioAtual].getTipo() == "cardio") { //Caso o Exercicio a ser executado seja do tipo Cardio
 				frameCardio.setTitle(exercicios[exercicioAtual].getNome());
 				texto.setText("Percorra " + exercicios[exercicioAtual].getDistancia() + " km");
 				frameCardio.add(texto);
@@ -81,7 +82,7 @@ public class TelaInicia implements ActionListener{
 				frameAtual = frameCardio;
 				frameAtual.setLocationRelativeTo(null);
 				frameAtual.setVisible(true);
-			}else if(exercicios[exercicioAtual].getTipo() == "Maquina") { //Caso o Exercicio a ser executado seja do tipo Maquina
+			}else if(exercicios[exercicioAtual].getTipo() == "maquina") { //Caso o Exercicio a ser executado seja do tipo Maquina
 				frameMaquina.setTitle(exercicios[exercicioAtual].getNome());
 				texto.setText("Peso: " + exercicios[exercicioAtual].getPeso() + " kg" + "    Repeticoes: " +
 						exercicios[exercicioAtual].getRepeticao() + "    Series: " + exercicios[exercicioAtual].getSerie());

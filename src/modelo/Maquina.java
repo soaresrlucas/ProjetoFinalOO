@@ -17,13 +17,13 @@ public class Maquina extends Exercicio {
 	 */
 	public Maquina(String nome) {
 		super.setNome(nome);
-		super.setTipo("Maquina");
+		super.setTipo("maquina");
 	}
 	/**
-	 * Sobrescrita do metodo abstrato da Classe Pai Exercicio. Responsavel por setar os valores a sererem utilizados na execucao do exercicio de Maquina.
+	 * Sobrescrita do metodo abstrato da Classe Pai Exercicio. Resposavel por setar os valores do exercicio.
 	 * @param peso Peso a ser definido para esse exercicio.
 	 * @param repeticao Repeticoes a serem realizadas nesse exercicio.
-	 * @param series Series a serem realizadas nesse exercicio.
+	 * @param serie Series a serem realizadas nesse exercicio.
 	 */
 	@Override
 	public void configuraExercicio(double peso, int repeticao, int serie) { //MODIFICAR
